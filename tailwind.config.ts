@@ -18,7 +18,6 @@ const config: Config = {
     },
     extend: {
       colors: {
-        accent: "#F87171",
         background: "#F3F4F6",
       },
       boxShadow: {
@@ -27,8 +26,13 @@ const config: Config = {
         profileHeader:
           "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset",
       },
+      backgroundImage: {
+        "amber-gradient":
+          "linear-gradient(to bottom, #FBBF24, #F59E0B, #D97706)",
+      },
     },
   },
   plugins: [],
 };
 export default config;
+// from-amber-400 via-amber-500 to-amber-700

@@ -36,8 +36,8 @@ export default function ProfileCard() {
   }, []);
 
   return (
-    <section className="relative w-full max-w-[420px] shadow-2xl rounded-[20px] bg-white pt-10 xs:pt-12 ms:pt-16">
-      <div className="absolute left-0 top-0 z-10 h-[120px] xs:h-[140px] ms:h-[165px] w-full bg-blue-500 rounded-t-[20px] sm:shadow-profileHeader" />
+    <section className="relative w-full max-w-[420px] shadow-2xl rounded-2xl bg-white pt-10 xs:pt-12 ms:pt-16">
+      <div className="absolute left-0 top-0 z-10 h-[120px] xs:h-[140px] ms:h-[165px] w-full bg-amber-gradient rounded-t-2xl" />
 
       <div className="relative z-20 w-[140px] xs:w-[160px] ms:w-[180px] mx-auto rounded-[45px] shadow-profilePicture p-1 xs:p-[5px] bg-white mb-8 xs:mb-10 ms:mb-12">
         <Image
@@ -51,7 +51,7 @@ export default function ProfileCard() {
       </div>
 
       <div className="text-center mb-8 ms:mb-10">
-        <p className="text-gray-800 text-3xl ms:text-4xl font-bold mb-2">
+        <p className="text-gray-800 text-3xl ms:text-4xl mlg:text-5xl font-bold mb-2">
           Ion Stici
         </p>
         <p className="text-gray-500 text-base ms:text-lg">
@@ -85,7 +85,7 @@ export default function ProfileCard() {
         <span className="font-medium">{localTime}</span>
       </p>
 
-      <button className="w-full px-4 flex gap-2 border-t border-gray-300 shadow-inner items-center justify-center pt-3 pb-4 ms:pt-4 ms:pb-5 text-green-600 rounded-b-[20px] transition duration-200 hover:text-green-700 hover:bg-green-100 focus:outline-none focus:text-green-700 focus:bg-green-100">
+      <button className="w-full px-4 flex gap-2 border-t border-gray-300 shadow-inner items-center justify-center pt-3 pb-4 ms:pt-4 ms:pb-5 text-green-600 rounded-b-2xl transition duration-200 hover:text-green-700 hover:bg-green-100 focus:outline-none focus:text-green-700 focus:bg-green-100">
         <IconMessage className="size-6 ms:size-7" />
         <span className="ms:text-lg">Available for Hire</span>
       </button>

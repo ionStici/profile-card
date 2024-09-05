@@ -20,7 +20,7 @@ import Image from "next/image";
 
 export default function FavoriteTechStack() {
   return (
-    <section className=" w-[420px] ml-auto bg-white shadow-2xl rounded-[20px] py-5">
+    <section className=" w-[420px] ml-auto bg-white shadow-2xl rounded-2xl py-5">
       <h2 className="text-2xl font-medium px-6 border-b border-gray-200 pb-4 mb-4 text-blue-800">
         Favorite Tech Stack
       </h2>

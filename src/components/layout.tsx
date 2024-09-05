@@ -1,17 +1,22 @@
 import ProfileCard from "./profile-card";
-import Navigation from "./navigation";
-import FavoriteTechStack from "./favorite-tech-stack";
+import Navigation from "./nav/navigation";
 
 export default function Layout() {
   return (
-    <div>
-      <main className="px-5 xs:px-6 mx-auto w-fit pb-10 sm:pt-10 sm:flex items-start gap-10 sm:px-8">
+    <main className="py-10">
+      <div
+        className="
+          px-5 xs:px-6 sm:px-8 md:px-10
+          flex flex-col items-center 
+          gap-5 xs:gap-6 ms:gap-8
+
+          sm:flex-row sm:items-start sm:justify-center
+          md:gap-10 mlg:gap-12
+        "
+      >
         <Navigation />
         <ProfileCard />
-      </main>
-      <div className="w-[556px] mx-auto">
-        <FavoriteTechStack />
       </div>
-    </div>
+    </main>
   );
 }
