@@ -11,7 +11,7 @@ export default function Hamb({ openNav }: HambProps) {
       className="sm:hidden size-10 xs:size-11 ms:size-12 flex items-center justify-center border border-slate-600 rounded-lg 
       transition duration-200 focus:outline-none hover:bg-slate-700 hover:border-transparent ring-2 ring-transparent focus:ring-red-400 focus:border-transparent"
     >
-      <IconHamb className="size-7 xs:size-8 text-white" />
+      <IconHamb className="size-7 xs:size-8 ms:size-9 text-white" />
     </button>
   );
 }

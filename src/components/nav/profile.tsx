@@ -10,7 +10,7 @@ export default function Profile() {
           alt="Ion Stici Profile Picture"
           width={75}
           height={75}
-          className="size-[55px] xs:size-[65px] ms:size-[75px] rounded-xl object-cover"
+          className="size-[50px] xs:size-[60px] ms:size-[70px] rounded-xl object-cover"
         />
       </div>
       <div>

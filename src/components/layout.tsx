@@ -1,21 +1,21 @@
-import ProfileCard from "./profile-card";
 import Navigation from "./nav/navigation";
+import ProfileCard from "./profile-card";
 
 export default function Layout() {
   return (
-    <main className="py-10">
+    <main className="sm:py-10">
       <div
         className="
+          pt-5 xs:pt-6 ms:pt-8 sm:pt-0
           px-5 xs:px-6 sm:px-8 md:px-10
-          flex flex-col items-center 
-          gap-5 xs:gap-6 ms:gap-8
-
-          sm:flex-row sm:items-start sm:justify-center
-          md:gap-10 mlg:gap-12
+          gap-5 xs:gap-6 ms:gap-8 md:gap-10
+          flex flex-col items-center sm:flex-row sm:items-start sm:justify-center
         "
       >
         <Navigation />
-        <ProfileCard />
+        <div>
+          <ProfileCard />
+        </div>
       </div>
     </main>
   );

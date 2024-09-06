@@ -2,8 +2,6 @@ type IconProps = {
   className: string;
 };
 
-//
-
 export function IconMessage({ className }: IconProps) {
   return (
     <svg
