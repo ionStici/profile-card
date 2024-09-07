@@ -19,17 +19,30 @@ export default function Navigation() {
         left: 0,
         behavior: "smooth",
       });
+
+      document.documentElement.classList.add("overflow-hidden");
     }
+
+    if (is640) document.documentElement.classList.remove("overflow-hidden");
+    return () => document.documentElement.classList.remove("overflow-hidden");
   }, [isOpen, is640]);
+
+  function toggleTheme() {
+    const isActive = document.body.classList.contains("dark");
+    isActive
+      ? document.body.classList.remove("dark")
+      : document.body.classList.add("dark");
+  }
 
   return (
     <nav
+      onClick={toggleTheme}
       className="
         w-full max-w-[420px] 
         sm:w-[100px] mlg:w-[250px]"
     >
-      <div className="rounded-2xl shadow-2xl bg-slate-800">
-        <div className="flex items-center justify-between px-5 py-3 xs:px-6 xs:py-4 ms:px-7 ms:py-5 sm:flex-col sm:p-0">
+      <div className="rounded-2xl shadow-2xl bg-white dark:bg-slate-800 transition duration-300">
+        <div className="flex items-center justify-between px-5 py-3 xs:px-6 xs:py-4 ms:py-5 sm:flex-col sm:p-0">
           <Logo />
           <Hamb openNav={() => setIsOpen(true)} />
 

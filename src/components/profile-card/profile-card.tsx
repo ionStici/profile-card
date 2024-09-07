@@ -51,7 +51,7 @@ export default function ProfileCard() {
       </div>
 
       <div className="text-center mb-8 ms:mb-10">
-        <p className="text-gray-800 text-3xl ms:text-4xl mlg:text-5xl font-bold mb-2">
+        <p className="text-gray-800 text-3xl xs:text-4xl ms:text-5xl font-bold mb-2">
           Ion Stici
         </p>
         <p className="text-gray-500 text-base ms:text-lg">
