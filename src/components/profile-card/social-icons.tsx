@@ -6,7 +6,7 @@ import {
 
 export default function SocialIcons() {
   return (
-    <ul className="flex items-center justify-center gap-3 mb-2 ms:mb-4">
+    <ul className="flex items-center justify-center gap-2 xs:gap-3 mb-2 ms:mb-4">
       {SocialLinks.map(({ href, Icon }, i) => {
         return (
           <li key={i}>
