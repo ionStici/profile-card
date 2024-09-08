@@ -49,7 +49,9 @@ export default function Navigation() {
         </div>
       </div>
 
-      <ThemeSwitcher />
+      <div className="relative h-0 sm:h-auto sm:rounded-2xl sm:shadow-2xl sm:bg-white sm:dark:bg-slate-800 sm:transition sm:duration-300 sm:flex sm:items-center sm:justify-center sm:flex-grow">
+        <ThemeSwitcher />
+      </div>
     </nav>
   );
 }
