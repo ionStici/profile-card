@@ -35,7 +35,9 @@ export default function Navigation() {
       className="
         w-full max-w-[420px] 
         sm:w-[100px] mlg:w-[250px] 
-        sm:h-[700px] sm:flex sm:flex-col sm:justify-between sm:gap-6"
+        sm:h-[700px] sm:flex sm:flex-col sm:justify-between sm:gap-8 md:gap-10 mlg:gap-6
+        sm:relative
+        "
     >
       <div className="rounded-2xl shadow-2xl bg-white dark:bg-slate-800 transition duration-300">
         <div className="flex items-center justify-between px-5 py-3 xs:px-6 xs:py-4 ms:py-5 sm:flex-col sm:p-0">
@@ -49,7 +51,7 @@ export default function Navigation() {
         </div>
       </div>
 
-      <div className="relative h-0 sm:h-auto sm:rounded-2xl sm:shadow-2xl sm:bg-white sm:dark:bg-slate-800 sm:transition sm:duration-300 sm:flex sm:items-center sm:justify-center sm:flex-grow">
+      <div className="relative h-0 sm:h-auto sm:absolute sm:left-[50%] sm:translate-x-[-50%] bottom-0">
         <ThemeSwitcher />
       </div>
     </nav>

@@ -19,22 +19,24 @@ export default function ThemeSwitcher() {
 
   return (
     <motion.button
-      initial={{ opacity: 0, transform: "rotate(0)" }}
+      initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transform: isDark ? "rotate(-6deg)" : "rotate(6deg)",
       }}
-      transition={{ type: "spring", stiffness: 200 }}
       onClick={toggleTheme}
       className="
-          overflow-hidden absolute -top-[49px] right-[78px] xs:-top-[56px] xs:right-[90px] ms:-top-[61px] ms:right-[95px] sm:relative sm:top-0 sm:right-0
+          overflow-hidden 
+          absolute -top-[49px] right-[78px] xs:-top-[56px] xs:right-[90px] ms:-top-[61px] ms:right-[95px]
+          sm:relative sm:top-0 sm:right-0
           rounded-full w-[72px] h-9
           shadow-light-toggler dark:shadow-dark-toggler 
           border border-slate-200 dark:border-slate-700
           bg-slate-50 dark:bg-slate-800 
-          transition duration-300
+          transition duration-300 focus:outline-none
+          focus:border-amber-500
           "
     >
+      {/* SUN */}
       <motion.div
         animate={{
           left: isDark ? "-25px" : "6px",
@@ -44,15 +46,18 @@ export default function ThemeSwitcher() {
         transition={{ type: "spring", stiffness: 200 }}
         className="absolute"
       >
-        <IconSun className="size-6 text-slate-500 transition duration-300" />
+        <IconSun className="size-6 text-slate-500" />
       </motion.div>
 
+      {/* CIRCLE */}
       <motion.div
         initial={{ left: "-6px", top: "5px" }}
         animate={{ left: isDark ? "6px" : "38px", top: "5px" }}
         transition={{ type: "spring", stiffness: 200 }}
-        className={`size-6 rounded-full bg-amber-500 absolute shadow-test dark:shadow-dark-pic transition duration-300`}
+        className={`size-6 rounded-full bg-amber-500 absolute shadow-light-circle dark:shadow-dark-pic transition duration-300`}
       />
+
+      {/* MOON */}
       <motion.div
         initial={{
           right: isDark ? "-6px" : "6px",
@@ -66,7 +71,7 @@ export default function ThemeSwitcher() {
         transition={{ type: "spring", stiffness: 200 }}
         className="absolute"
       >
-        <IconMoon className="size-6 text-slate-200 transition duration-300" />
+        <IconMoon className="size-6 text-slate-200" />
       </motion.div>
     </motion.button>
   );

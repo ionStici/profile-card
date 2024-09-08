@@ -51,7 +51,7 @@ export default function Links({ is640 }: LinksProps) {
                   flex items-center gap-2 xs:gap-3 px-4 xs:px-5 py-2 xs:py-3
                   rounded-lg border border-transparent
                   transition duration-300 focus:outline-none 
-                  ring-2 ring-transparent focus:ring-red-400
+                  ring-2 ring-transparent focus:ring-amber-500
                   sm:mx-auto sm:p-0 sm:size-[60px] sm:justify-center
                   mlg:mx-6 mlg:size-auto mlg:justify-start mlg:py-3 mlg:px-5
                   ${
