@@ -16,7 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${font.className}`}>
-      <body className="dark relative bg-background min-h-dvh">{children}</body>
+      <body className="relative min-h-dvh dark bg-pattern-dark bg-slate-100 dark:bg-slate-700 transition duration-300">
+        {children}
+      </body>
     </html>
   );
 }

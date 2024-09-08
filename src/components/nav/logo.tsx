@@ -7,7 +7,7 @@ export default function Logo() {
       <Link
         href="/"
         className="
-        h-10 xs:h-11 ms:h-12 flex gap-[2px] items-center
+        h-10 xs:h-11 ms:h-12 flex gap-[2px] mlg:gap-2 items-center
         transition duration-300 focus:outline-none rounded-xl px-2 -ml-2 sm:ml-0 sm:p-1 mlg:px-4 mlg:pb-2 mlg:pt-1 ring-2 ring-transparent focus:ring-red-400
         sm:flex-col sm:size-auto"
       >

@@ -1,100 +1,32 @@
-"use client";
-
-import {
-  IconGithub,
-  IconLinkedin,
-  IconMessage,
-  IconTwitter,
-} from "@/assets/icons";
-import profileImage from "@/assets/profile.jpg";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-
-const options = {
-  hour: "2-digit",
-  minute: "2-digit",
-  timeZone: "Europe/Bucharest",
-};
+import HireButton from "./hire-button";
+import LocalTime from "./local-time";
+import NameAndTitle from "./name-and-title";
+import ProfilePicture from "./profile-picture";
+import ShortBio from "./short-bio";
+import SocialIcons from "./social-icons";
 
 export default function ProfileCard() {
-  const [localTime, setLocalTime] = useState("");
-
-  function updateLocalTime() {
-    const now = new Date();
-    const timeString = new Intl.DateTimeFormat("ro", options).format(now);
-    setLocalTime(timeString);
-  }
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      updateLocalTime();
-    }, 60000);
-
-    updateLocalTime();
-
-    return () => clearInterval(timer);
-  }, []);
-
   return (
-    <section className="relative w-full max-w-[420px] shadow-2xl rounded-2xl bg-white pt-10 xs:pt-12 ms:pt-16">
-      <div className="absolute left-0 top-0 z-10 h-[120px] xs:h-[140px] ms:h-[165px] w-full bg-amber-gradient rounded-t-2xl" />
-
-      <div className="relative z-20 w-[140px] xs:w-[160px] ms:w-[180px] mx-auto rounded-[45px] shadow-profilePicture p-1 xs:p-[5px] bg-white mb-8 xs:mb-10 ms:mb-12">
-        <Image
-          src={profileImage}
-          alt="Ion Stici Profile Picture"
-          width={200}
-          height={200}
-          className="size-full object-cover rounded-[40px]"
-          priority
-        />
+    <section className="relative w-full max-w-[420px] ms:h-[700px] rounded-2xl shadow-2xl pt-10 xs:pt-12 ms:pt-16">
+      <CardOverlay />
+      <div className="relative z-20 flex flex-col h-full">
+        <ProfilePicture />
+        <NameAndTitle />
+        <ShortBio />
+        <SocialIcons />
+        <LocalTime />
+        <HireButton />
       </div>
-
-      <div className="text-center mb-8 ms:mb-10">
-        <p className="text-gray-800 text-3xl xs:text-4xl ms:text-5xl font-bold mb-2">
-          Ion Stici
-        </p>
-        <p className="text-gray-500 text-base ms:text-lg">
-          Freelance Web Developer
-        </p>
-      </div>
-
-      <p className="text-gray-600 text-center px-4 ms:px-5 mb-6 ms:mb-8">
-        Crafting clean code and brewing strong coffee. Let&apos;s build
-        something amazing together!
-      </p>
-
-      <ul className="flex items-center justify-center gap-3 mb-2 ms:mb-4">
-        {SocialLinks.map(({ href, Icon }, i) => {
-          return (
-            <li key={i}>
-              <a
-                href={href}
-                target="_blank"
-                className="block p-[6px] border border-transparent rounded-lg transition duration-200 hover:shadow-inner hover:border-gray-300 group focus:outline-none focus:shadow-inner focus:border-gray-300"
-              >
-                <Icon className="size-7 ms:size-8 fill-gray-600 group-hover:fill-blue-500 transition duration-200" />
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-
-      <p className="text-center text-sm ms:text-base text-gray-500/85 mb-8 xs:mb-10 ms:mb-12">
-        <span>Local time: </span>
-        <span className="font-medium">{localTime}</span>
-      </p>
-
-      <button className="w-full px-4 flex gap-2 border-t border-gray-300 shadow-inner items-center justify-center pt-3 pb-4 ms:pt-4 ms:pb-5 text-green-600 rounded-b-2xl transition duration-200 hover:text-green-700 hover:bg-green-100 focus:outline-none focus:text-green-700 focus:bg-green-100">
-        <IconMessage className="size-6 ms:size-7" />
-        <span className="ms:text-lg">Available for Hire</span>
-      </button>
     </section>
   );
 }
 
-const SocialLinks = [
-  { href: "https://github.com/ionStici", Icon: IconGithub },
-  { href: "https://www.linkedin.com/in/ionstici/", Icon: IconLinkedin },
-  { href: "https://x.com/ionsticidev", Icon: IconTwitter },
-];
+function CardOverlay() {
+  return (
+    <>
+      <div className="absolute left-0 top-0 z-20 h-[120px] xs:h-[140px] ms:h-[165px] w-full shadow-light-header dark:shadow-dark-header bg-card-header rounded-t-2xl transition duration-300" />
+      <div className="absolute z-10 top-0 left-0 size-full rounded-2xl bg-card-light-bg transition duration-300 dark:opacity-0" />
+      <div className="absolute z-10 top-0 left-0 size-full rounded-2xl bg-card-dark-bg transition duration-300 opacity-0 dark:opacity-100" />
+    </>
+  );
+}
