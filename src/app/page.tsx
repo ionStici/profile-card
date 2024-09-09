@@ -1,10 +1,5 @@
-import NavigationLayout from "@/components/nav/navigation-layout";
-import ProfileCard from "@/components/profile-card/profile-card";
+import HomeLayout from "@/components/layouts/home-layout";
 
 export default function page() {
-  return (
-    <NavigationLayout>
-      <ProfileCard />
-    </NavigationLayout>
-  );
+  return <HomeLayout />;
 }

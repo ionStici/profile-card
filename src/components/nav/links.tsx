@@ -1,9 +1,4 @@
-import {
-  IconContact,
-  IconHome,
-  IconProjects,
-  IconResume,
-} from "@/assets/icons/nav-icons";
+import { IconContact, IconHome, IconProjects, IconResume } from "@/assets/icons/nav-icons";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -27,7 +22,7 @@ export default function Links({ is640 }: LinksProps) {
         bg-white dark:bg-slate-800 sm:dark:bg-transparent sm:bg-transparent transition duration-300
         w-[250px] xs:w-[275px] ms:w-[310px]
         scrollbar-hide overflow-y-scroll max-h-dvh h-full
-        sm:static sm:w-full sm:h-auto sm:min-h-fit"
+        sm:static sm:w-full sm:max-h-auto"
     >
       <Profile />
 
@@ -37,7 +32,7 @@ export default function Links({ is640 }: LinksProps) {
             gap-4 xs:gap-5 
             px-5 xs:px-6 ms:px-7 sm:px-0 
             py-8 xs:py-10 ms:py-12 
-            border-t border-b border-slate-200 dark:border-slate-600 transition duration-300"
+            border-t border-slate-200 dark:border-slate-600 transition duration-300"
       >
         {links.map(({ text, href, Icon }) => {
           const isActive = href === path;
@@ -69,7 +64,9 @@ export default function Links({ is640 }: LinksProps) {
           );
         })}
       </ul>
-      <Copyright />
+      <div className="mt-auto border-t border-slate-200 dark:border-slate-600 transition duration-300">
+        <Copyright />
+      </div>
     </motion.div>
   );
 }

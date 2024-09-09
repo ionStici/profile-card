@@ -33,26 +33,22 @@ export default function Navigation() {
   return (
     <nav
       className="
-        w-full max-w-[420px] 
-        sm:w-[100px] mlg:w-[250px] 
-        sm:h-[700px] sm:flex sm:flex-col sm:justify-between sm:gap-8 md:gap-10 mlg:gap-6
-        sm:relative
-        "
+        w-full max-w-[420px] flex-shrink-0
+        sm:w-[100px] mlg:w-[250px] sm:h-[700px]"
     >
-      <div className="rounded-2xl shadow-2xl bg-white dark:bg-slate-800 transition duration-300">
-        <div className="flex items-center justify-between px-5 py-3 xs:px-6 xs:py-4 ms:py-5 sm:flex-col sm:p-0">
+      <div className="rounded-2xl shadow-2xl bg-white dark:bg-slate-800 transition duration-300 sm:h-full">
+        <div className="flex items-center px-5 py-3 xs:px-6 xs:py-4 ms:py-5 sm:flex-col sm:p-0 sm:h-full sm:relative">
           <Logo />
-          <Hamb openNav={() => setIsOpen(true)} />
 
           {isOpen && !is640 && <Overlay closeNav={() => setIsOpen(false)} />}
-          <AnimatePresence>
-            {(isOpen || is640) && <Links is640={is640} />}
-          </AnimatePresence>
-        </div>
-      </div>
+          <AnimatePresence>{(isOpen || is640) && <Links is640={is640} />}</AnimatePresence>
 
-      <div className="relative h-0 sm:h-auto sm:absolute sm:left-[50%] sm:translate-x-[-50%] bottom-0">
-        <ThemeSwitcher />
+          <div className="relative flex ml-auto mr-5 xs:mr-6 sm:z-30 sm:m-0 sm:absolute sm:left-[50%] sm:translate-x-[-50%] sm:bottom-[85px]">
+            <ThemeSwitcher />
+          </div>
+
+          <Hamb openNav={() => setIsOpen(true)} />
+        </div>
       </div>
     </nav>
   );

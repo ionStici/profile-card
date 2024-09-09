@@ -7,7 +7,7 @@ import SocialIcons from "./social-icons";
 
 export default function ProfileCard() {
   return (
-    <section className="relative w-full max-w-[420px] ms:h-[700px] rounded-2xl shadow-2xl pt-10 xs:pt-12 ms:pt-16">
+    <section className="relative w-full max-w-[420px] ms:min-h-[700px] h-full rounded-2xl shadow-2xl pt-10 xs:pt-12 ms:pt-16">
       <CardOverlay />
       <div className="relative z-20 flex flex-col h-full">
         <ProfilePicture />
