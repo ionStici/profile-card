@@ -4,16 +4,11 @@ import TechsIcons from "./techs-icons";
 export default function AboutCard() {
   return (
     <AboutLayout>
+      <TechStack />
       <Article
         title="Who I Am & What I Do"
         text="I'm a self-taught Web Developer with 3+ years of experience, specializing in TypeScript, React, Next.js, and Supabase. I build clean, fast, and modern web apps that deliver seamless user experiences."
       />
-      <div>
-        <h3 className="text-lg ms:text-xl font-semibold mb-4 text-slate-700 dark:text-slate-200 transition duration-300">
-          Favorite Tech Stack
-        </h3>
-        <TechsIcons />
-      </div>
       <Article
         title="My Expertise & Freelance"
         text="Detail-oriented and skilled at solving complex problems through code. Open to freelance opportunities and ready for new projects."
@@ -21,8 +16,20 @@ export default function AboutCard() {
       <Article
         title="What's Next"
         text="Currently exploring Node.js and backend development to expand my full-stack skills, focusing on server-side programming and databases."
+        // text="Currently exploring Node.js and backend development to expand my full-stack skills."
       />
     </AboutLayout>
+  );
+}
+
+function TechStack() {
+  return (
+    <div className="w-full">
+      <h3 className="text-base xs:text-lg ms:text-xl font-semibold mb-3 text-slate-700 dark:text-slate-200 transition duration-300">
+        Favorite Tech Stack
+      </h3>
+      <TechsIcons />
+    </div>
   );
 }
 
@@ -43,17 +50,17 @@ function AboutLayout({ children }: { children: ReactNode }) {
   return (
     <section className="relative size-full rounded-2xl shadow-2xl max-w-[420px] w-full sm:max-w-full">
       <Overlay />
-      <div className="relative z-20">
+      <div className="relative z-20 flex flex-col h-full">
         <div className="bg-card-header rounded-t-2xl shadow-light-header dark:shadow-dark-header transition duration-300 py-3 ms:py-4 px-5 ms:px-6">
           <h2 className="text-white text-xl ms:text-2xl font-semibold text-center">About Me</h2>
         </div>
         <div
           className="
+              flex-grow
               px-5 xs:px-6
               pt-4 xs:pt-4 ms:pt-5
               pb-5 xs:pb-5 ms:pb-6
-              space-y-4 mlg:space-y-8 xlg:space-y-4 mlg:max-w-[600px] mlg:mx-auto
-              text-center
+              space-y-6 ms:space-y-8 xlg:space-y-5 xl:space-y-8
               flex flex-col items-center justify-center
             "
         >

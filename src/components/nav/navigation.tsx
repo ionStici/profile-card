@@ -34,7 +34,7 @@ export default function Navigation() {
     <nav
       className="
         w-full max-w-[420px] flex-shrink-0
-        sm:w-[100px] mlg:w-[250px] sm:h-[700px]"
+        sm:w-[100px] mlg:w-[250px] sm:min-h-[700px] h-full"
     >
       <div className="rounded-2xl shadow-2xl bg-white dark:bg-slate-800 transition duration-300 sm:h-full">
         <div className="flex items-center px-5 py-3 xs:px-6 xs:py-4 ms:py-5 sm:flex-col sm:p-0 sm:h-full sm:relative">

@@ -9,11 +9,11 @@ import Image from "next/image";
 
 export default function TechsIcons() {
   return (
-    <ul className="flex flex-wrap justify-center gap-3 ms:px-10 sm:gap-5 sm:px-0">
+    <ul className="flex flex-wrap gap-3 xl:justify-between">
       {icons.map(({ icon, alt }) => {
         return (
           <li key={alt}>
-            <Image src={icon} alt={alt} width={50} height={50} className="size-[45px]" />
+            <Image src={icon} alt={alt} width={50} height={50} className="size-[40px]" />
           </li>
         );
       })}
