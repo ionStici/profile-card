@@ -72,8 +72,8 @@ export default function Links({ is640 }: LinksProps) {
 }
 
 const links = [
-  { text: "Home", href: "/", Icon: IconHome },
-  { text: "Projects", href: "/projects", Icon: IconProjects },
-  { text: "Resume", href: "/resume", Icon: IconResume },
-  { text: "Contact", href: "/contact", Icon: IconContact },
+  { text: "Home", href: ".", Icon: IconHome },
+  { text: "Projects", href: ".", Icon: IconProjects },
+  { text: "Resume", href: ".", Icon: IconResume },
+  { text: "Contact", href: ".", Icon: IconContact },
 ];

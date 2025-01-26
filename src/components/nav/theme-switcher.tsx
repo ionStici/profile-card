@@ -1,25 +1,14 @@
 import { IconMoon, IconSun } from "@/assets/icons/nav-icons";
+import { useTheme } from "@/contexts/theme-provider";
 import { motion } from "framer-motion";
-import { useState } from "react";
 
 export default function ThemeSwitcher() {
-  const [isDark, setIsDark] = useState(() => {
-    return document.body.classList.contains("dark");
-  });
-
-  function toggleTheme() {
-    setIsDark((prev) => {
-      prev ? document.body.classList.remove("dark") : document.body.classList.add("dark");
-
-      return document.body.classList.contains("dark");
-    });
-  }
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === "dark" ? true : false;
 
   return (
     <button
       onClick={toggleTheme}
-      // absolute -top-[49px] right-[78px] xs:-top-[56px] xs:right-[90px] ms:-top-[61px] ms:right-[95px]
-      // sm:relative sm:top-0 sm:right-0
       className="
           overflow-hidden 
           relative

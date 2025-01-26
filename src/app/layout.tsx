@@ -5,8 +5,8 @@ import "./globals.css";
 const font = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "",
-  description: "",
+  title: "Profile Card",
+  description: "A developer's Profile Card, crafted using React, Next.js, Motion and Tailwind.",
 };
 
 export default function RootLayout({

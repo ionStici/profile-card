@@ -1,12 +1,17 @@
 import Image from "next/image";
-import profilePicture from "@/assets/profile-picture.jpg";
+import profilePictureDark from "@/assets/profile-picture-dark.jpg";
+import profilePictureLight from "@/assets/profile-picture-light.jpg";
+import { useTheme } from "@/contexts/theme-provider";
 
 export default function Profile() {
+  const { theme } = useTheme();
+  const picture = theme === "dark" ? profilePictureDark : profilePictureLight;
+
   return (
     <div className="sm:hidden flex items-center justify-center gap-3 xs:gap-4 ms:gap-5 py-8 xs:py-10 ms:py-12">
       <div className="p-[2px] ms:p-[3px] flex-shrink-0 rounded-xl shadow-light-pic dark:shadow-dark-pic bg-white dark:bg-slate-200 transition duration-300">
         <Image
-          src={profilePicture}
+          src={picture}
           alt="Ion Stici's Profile Picture"
           width={70}
           height={70}

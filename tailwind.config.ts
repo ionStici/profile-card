@@ -16,6 +16,15 @@ const config: Config = {
       xxl: "1536px",
     },
     extend: {
+      animation: {
+        shimmer: "shimmer 2s infinite linear",
+      },
+      keyframes: {
+        shimmer: {
+          "0%": { backgroundPosition: "200% 0" },
+          "100%": { backgroundPosition: "-200% 0" },
+        },
+      },
       boxShadow: {
         "light-pic":
           "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
