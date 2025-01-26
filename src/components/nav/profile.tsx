@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import profilePictureDark from "@/assets/profile-picture-dark.jpg";
 import profilePictureLight from "@/assets/profile-picture-light.jpg";

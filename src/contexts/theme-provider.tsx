@@ -3,14 +3,9 @@
 import { createContext, ReactNode, useCallback, useContext, useEffect, useState } from "react";
 
 type Theme = "light" | "dark";
+const defaultTheme: Theme = "dark";
 
-const storageKey = "pc-ui-theme";
-const defaultTheme = "dark";
-
-type ThemeContextType = {
-  theme: Theme;
-  toggleTheme: () => void;
-};
+type ThemeContextType = { theme: Theme; toggleTheme: () => void };
 
 const ThemeContext = createContext<ThemeContextType>({
   theme: defaultTheme,
@@ -21,31 +16,15 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>(defaultTheme);
 
   useEffect(() => {
-    const storedTheme = localStorage.getItem(storageKey) as Theme | null;
-    if (storedTheme) {
-      setTheme(storedTheme);
-    } else {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      setTheme(systemTheme ? "dark" : "light");
-    }
-  }, []);
-
-  useEffect(() => {
     const body = document.body;
     body.classList.remove("light", "dark");
     body.classList.add(theme);
   }, [theme]);
 
   useEffect(() => {
-    localStorage.setItem(storageKey, theme);
-  }, [theme]);
-
-  useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-    const handleChange = (e: MediaQueryListEvent) => {
-      setTheme(e.matches ? "dark" : "light");
-    };
+    const handleChange = (e: MediaQueryListEvent) => setTheme(e.matches ? "dark" : "light");
 
     mediaQuery.addEventListener("change", handleChange);
 

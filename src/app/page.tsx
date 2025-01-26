@@ -1,5 +1,5 @@
-import HomeLayout from "@/components/layouts/home-layout";
+import Layout from "@/components/layouts/layout";
 
-export default function page() {
-  return <HomeLayout />;
+export default function Page() {
+  return <Layout />;
 }

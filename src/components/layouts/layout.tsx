@@ -2,7 +2,7 @@ import { ThemeProvider } from "@/contexts/theme-provider";
 import Navigation from "../nav/navigation";
 import ProfileCard from "../profile-card/profile-card";
 
-export default function HomeLayout() {
+export default function Layout() {
   return (
     <ThemeProvider>
       <main>
